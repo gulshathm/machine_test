@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navigation Bar</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+  <style>
+    .navbar-brand img {
+      max-height: 40px;
+    }
+    .circle {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      background-color: yellowgreen;
+      color: black;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+    }
+    .container1 {
+    display: flex;
+    /* max-width: 800px; */
+    background-color: #fff;
+    /* box-shadow: 0 0 10px rgba(0,0,0,0.1); */
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 50px;
+}
+.image {
+    flex: 1;
+    /* width:30% ;
+    height: 50%; */
+    margin-left: 40px;
+    margin-right: 10px;
+   
+}
+.content {
+    flex: 1;
+    padding: 20px;
+}
+.content h4 {
+    color:black;
+    font-size: 24px;
+    margin-top: 0;
+}
+.content p {
+    color: black;
+    font-size: 16px;
+}
+.content button {
+    padding: 10px 20px;
+    background-color: black;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.content button:hover {
+    background-color: #0056b3;
+}
+.card {
+      margin-bottom: 20px;
+    }
+    .circle-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: rgba(0, 0, 0, 0.3);
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    }
+    .blur {
+      filter: blur(4px);
+    }
+    .animate__animated {
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+    .animate__fadeInLeft {
+      animation-name: fadeInLeft;
+    }
+    .animate__fadeInRight {
+      animation-name: fadeInRight;
+    }
+    @keyframes fadeInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fadeInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    .article {
+      margin-bottom: 20px;
+      margin-left: 30px;
+    }
+    .group-2879-Ehs {
+        flex-shrink: 0;
+        height: 13px;
+       
+        object-fit: contain;
+        vertical-align: top;
+        width: 23px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        float: right;
+      }
+      .group-2880-jed {
+        flex-shrink: 0;
+        height: 13px;
+        object-fit: contain;
+        vertical-align: top;
+        width:23px;
+        border-radius: 50%;
+        background-color: aliceblue;
+        float: right;
+      }
+    /* Styles for the box */
+.content-box {
+    background-color: #f2f2f2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+ margin-right: 60px;
+ margin-top: 30px;
+ margin-left: -25px;
+  
+   
+}
+
+/* Styles for the circle */
+.circle {
+    position: absolute;
+    top: -2px; /* Adjust this value to position the circle */
+    left: 10px; /* Center the circle */
+    transform: translateX(50%);
+    background-color: #ffffff;
+    border: 2px solid #f2f2f2;
+    border-radius: 50%;
+    width: 50px; /* Adjust circle size */
+    height: 50px; /* Adjust circle size */
+    display: flex;
+  
+   
+}
+
+.circle4 {
+    position: absolute;
+    top: -2px; /* Adjust this value to position the circle */
+    right: 30px; /* Center the circle */
+    transform: translateX(50%);
+    background-color: black;
+    border: 2px solid #f2f2f2;
+    border-radius: 50%;
+    width: 30px; /* Adjust circle size */
+    height: 30px; /* Adjust circle size */
+    display: flex;
+    padding: 5px;
+  
+   
+}
+
+/* Styles for the text */
+.text {
+    padding-left: 40px;
+   /* Adjust this value to create space for the circle */
+}
+.list-unstyled{
+  color: white;
+  text-decoration: none;
+}
+footer{
+  background-size: cover;
+}
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light ">
+  <div class="container ">
+    <a class="navbar-brand" href="#">
+      <img src="logo.png" alt="Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Career</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Knowledge</a>
+        </li>
+      </ul>
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i  class="fas fa-search"></i></a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Eng
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">English</a>
+            <a class="dropdown-item" href="#">French</a>
+            <a class="dropdown-item" href="#">Spanish</a>
+          </div>
+        </li>
+        <li class="nav-item bg-warning">
+          <a class="nav-link" href="#">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<br>
+
+      <div class="container-fluid" style="padding: 40px;">
+        <div class="row">
+        
+          <div class="col-md-6">
+            <div>
+              <h1>We Provide The <span style="border-bottom: 5px solid blue;">Best</span> <br><span style="border-bottom: 5px solid blue;">Solution</span> For Your Business Development,</h1>
+              <p>Tincidunt vitae bibendum et interdum in. Mi sed egestas gravida egestas ornare neque odio a risus.</p>
+              <button class="btn btn-dark text-light">Get Started -></button>
+              <hr>
+              <p>We Provide Best OpenText Service to many Worldwide companies</p>
+              <img class="group-2879-Ehs" src="larrow.png" id="0:211" />
+        <img class="group-2880-jed" src="rarrow.png" id="0:208" />
+              <h5>Trusted By 400+ Companies</h5>
+            
+              <div class="d-flex justify-content-between">
+                <i></i>logo
+                <i class="fa-solid fa-globe"></i>ipsum
+                <i ></i>logoipsum
+                <i class="fa-brands fa-discord"></i>Logoipsum
+                <i class="fa-solid fa-compact-disc"></i>logoipsum
+              </div>
+            </div>
+          </div>
+        
+          <div class="col-md-6">
+        <div class="row">
+          <div class="col-md-6">
+              <div style="margin-top: 40px;">
+                <div class="circle4">
+                  <i style="color: green;" class="fa-solid fa-compact-disc"></i>
+                   
+                </div>
+                  <h3 style="box-sizing: border-box;box-shadow: #ccc;"><b>Accelerating</b><br>Business Growth<br> through SAPTech<br> Expertise</h3>
+                  <hr>
+              </div>
+            
+              <div style="border: 1px solid #ccc; padding: 20px; margin-top: 20px; background-color: black;color: white;border-radius: 5%;">
+              <p style="border-radius: 50%;width: 35px;height: 35px;padding: 5px;" class="circle3 bg-success "> 9.8</p>
+                <h6>Overall Clients Rate</h6>
+                <p style="color: lightslategrey;">More than 10K reviews</p>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <img src="off4.jpg" width="280px" height="370px">
+          </div>
+      </div>
+      
+      </div>
+    
+
+    </div>
+  </div>
+  <br><br>
+  <br>
+  <section>
+    <div class="container1">
+      <div class="image">
+          <img src="image.jpg" alt="Left Image" style="width: 100%;margin-top: 10px;height: 100%;">
+      </div>
+      <div class="content">
+          <h1>Unlocking Business Potential with Expert SAP Consultancy</h1><br>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br>
+          <button>About us ></button>
+      </div>
+  </div>
+  </section>
+  <br>
+
+ 
+
+
+  <div class="container-fluid p-5">
+    <div class="row justify-content-center"> <!-- Modified here -->
+      <!-- First Column -->
+      <div class="col-md-6">
+        <h1>How can we help you?</h1>
+        <p>Tincidunt vitae bibendum et interdum in. Mi sed egestas gravida egestas ornare neque odio a risus.</p>
+      </div>
+      <!-- Second Column -->
+      <div class="col-md-6">
+        <div class="row">
+          <!-- First Box -->
+          <div class="col-md-4 mb-4" style="background-color: black; color: white; height: 150px;">
+            <p>01</p>
+            <h1>𝐎𝐭</h1>
+            <p>OpenText</p>
+          </div>
+          <!-- Second Box -->
+          <div class="col-md-4 mb-4" style="background-color: blue; color: white; padding: 5px;height: 200px;">
+            <p>02</p>
+            <h1>𝙎𝘼𝙋</h1>
+            <p>SAP</p>
+            <div style="float: right;">view all <i class="fa-solid fa-arrow-right" style="padding: 10px;background-color: white;color: black;border-radius: 50%;"></i></div> 
+          </div>
+          <!-- Third Box -->
+          <div class="col-md-4 mb-4" style="background-color: black; color: white;height: 150px;">
+            <p>03</p>
+            <i class="fa-solid fa-compact-disc"></i>
+            <p>Finance Services</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+  <div class="container2">
+    <div class="row" style="padding: 20px;margin-left: 20px;justify-content: space-around;">
+    <div class="col-md-6">
+      <h2 > I am thrilled to address you today as the CEO of SAPTech consultancy,a leading provider of innovative SAP solutions</h2>
+      <center>
+      <h3 style="color: blue;">𝓼𝓪𝓹𝓽𝓮𝓬𝓱</h3>
+      <p><b>John Doe</b></p>
+      <p>CEO,SAPTECH</p>
+    </center>
+    </div>
+    <div style="border-left: 1px solid black;" class="col-md-6">
+      <h2>What makes us<br> different from other</h2>
+      <br>
+      <ul>
+        <span style="color: blue;" class="tick-mark">&#10004;</span>Mastering SAP Solutions for Optimal Business Performance <br>
+        <span style="color: blue;" class="tick-mark">&#10004;</span> Unleashing the Power of SAP for Business Success<br>
+        <span style="color: blue;" class="tick-mark">&#10004;</span> SAP Expert:Crafting Tailored Solutions for Your Business
+      </ul>
+    </div>
+  </div>
+  </div>
+  <div class="container3" style="padding: 20px;margin-left: 40px;margin-right: 30px;">
+    <div class="row">
+      <div class="col-md-6">
+        <h2>Why Choose us ?</h2>
+        <p>Tincidunt vitae bibendum et interdum in. Mi sed egestas gravida egestas ornare neque odio a risus.</p>
+        <p style="color: blue;">We have 35+ years of experience.We offer marketing and consulting services</p> 
+       <div class="row">
+        <div class="col-md-6">
+          <h2 style="color: blue;">1550</h2>
+          <p> Happy Clients</p>
+        </div>
+        <div class="col-md-6">
+          <h2 style="color: blue;">80%c</h2>
+          <p>Business Growth</p>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+       </div>
+       <h2 style="color: blue;">230+</h2>
+       <p>Trusted by Companies</p>
+       </div>
+      <div class="col-md-6">
+        <img src="image.jpg" class="img-fluid" alt="Placeholder Image">
+      </div>
+    </div>
+  </div>
+  <div class="container4">
+    <h2 style="margin-left: 50px;">Case Studies</h2>
+    <p style="margin-left: 50px;">Proud project that makes as stand out.</p>
+    <div class="container">
+      <div class="row mb-4 justify-content-center"> <!-- Added justify-content-center class -->
+        <div class="col-md-4 margin-left-40px">
+          <div class="column">
+            <img src="image1.jpg" class="img-fluid" alt="Image 1" width="250px" style="background-color: lightpink;padding: 50px;">
+            <h4><u>SAP</u></h4>
+            <h5><b>A eu est euismod tritique porta</b></h5>
+            <p>Eleifend ornare aliquet  sed sed lacus cras mattis maecenas quam. in consequat aenean id viverra fringilla urna. senectus at massa duai arcu ac.</p>
+            <button class="btn btn-light text-dark">Read More-></button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="column">
+            <img src="image3.png" class="img-fluid" alt="Image 1" width="230px" style="background-color: lightgrey;padding: 40px;">
+            <h4><u>SAP</u></h4>
+            <h5><b>A eu est euismod tritique porta</b></h5>
+            <p>Eleifend ornare aliquet  sed sed lacus cras mattis maecenas quam. in consequat aenean id viverra fringilla urna. senectus at massa duai arcu ac.</p>
+            <button class="btn btn-light text-dark">Read More-></button>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="column">
+            <img src="images2.jpg" class="img-fluid" alt="Image 1" width="300px" style="background-color: peachpuff;padding: 40px;">
+            <h4><u>SAP</u></h4>
+            <h5><b>A eu est euismod tritique porta</b></h5>
+            <p>Eleifend ornare aliquet  sed sed lacus cras mattis maecenas quam. in consequat aenean id viverra fringilla urna. senectus at massa duai arcu ac.</p>
+            <button class="btn btn-light text-dark">Read More-></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+    
+  <br>
+  <div class="container" style="width: 1000px; ">
+    <div class="container5 mx-auto">
+      <h1 class="text">Awards & Certificates</h1>
+      <br>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <i style="color: blue;" class="fa-solid fa-circle"></i><span style="float: right;">2021</span>
+              <h5 class="card-title">SAP Pinnacle Awards</h5>
+              <p class="card-text">Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <i style="color: blue;" class="fa-solid fa-circle"></i><span style="float: right;">2021</span>
+              <h5 class="card-title">SAP Pinnacle Awards</h5>
+              <p class="card-text">Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <i style="color: blue;" class="fa-solid fa-circle"></i><span style="float: right;">2021</span>
+              <h5 class="card-title">SAP Pinnacle Awards</h5>
+              <p class="card-text">Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="width: 1000px;">
+    <div class="container5 mx-auto">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+            <img style="margin-top: 0;margin-left: 0;padding: 0;" src="micro.png" width="200px" ><span style="float: right;">2021</span><br>
+            <br>
+              <p class="card-text">Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img style="margin-top: 0;margin-left: 0;padding: 0;" src="Google-Cloud-Logo.png" width="190px" ><br>
+            <br>
+              <p class="card-text">Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <img style="margin-top: 0;margin-left: 0;padding: 0;" src="aws.png" width="90px" ><span style="float: right;">2021</span><br>
+              <br>
+                <p class="card-text">Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container mt-5 bg-light ">
+    <h1 class="text">Customer Experience</h1>
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="card blur-effect">
+          <div class="card-body" style=" filter: blur(5px);">
+            <p>Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+           
+            <img style="border-radius: 50%;" src="pro1.png" width="30px"><b> Customer Experience</b><br>Designation
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blur-effect">
+          <div class="card-body">
+            <p>Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+           
+            <img style="border-radius: 50%;"  src="pro2.jpg" width="30px" ><b> Customer Experience</b><br>Designation
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card blur-effect">
+          <div class="card-body" style=" filter: blur(5px);">
+            <p>Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+           
+            <img style="border-radius: 50%;"  src="pro3.png" width="30px"><b> Customer Experience</b><br>Designation
+          </div>
+        </div>
+      </div>
+    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="container-fluid">
+    <h2 style="margin-left: 60px;"><b>News & Blogs</b></h2>
+    <br>
+    <div class="row justify-content-center"> <!-- Modified here -->
+        <div class="col-md-12">
+            <div class="row">
+            
+                <!-- First Column -->
+                <div class="col-md-6">
+                    <div class="article">
+                        <img src="image1.jpg" alt="Image 1" class="img-fluid" width="480px" height="150px">
+                        <h4><b>What makes us different from others</b></h4>
+                        <p>Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam. Eleifend ornare aliquent sed sed lacus crase mattis maecenas quam.</p>
+                        <button class="btn btn-light text-dark">Read More-></button>
+                    </div>
+                </div>
+                <!-- Second Column -->
+                <div class="col-md-6">
+                    <div class="row">
+                        <!-- First Row -->
+                        <div class="col-md-12">
+                            <div class="article">
+                                <img src="off1.jpg" alt="Image 2" class="img-fluid float-left mr-3" width="195px" height="150px">
+                                <div>
+                                    <button class="btn btn-light text-info">Finance</button>
+                                    <h5><b>What makes us different from others</b></h5>
+                                    <p>May 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Second Row -->
+                        <div class="col-md-12">
+                            <div class="article">
+                                <img src="oof2.png" alt="Image 3" class="img-fluid float-left mr-3" width="195px" height="150px">
+                                <div>
+                                    <button class="btn btn-light text-info">Finance</button>
+                                    <h5><b>What makes us different from others</b></h5>
+                                    <p>May 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Third Row -->
+                        <div class="col-md-12">
+                            <div class="article">
+                                <img src="off3.png" alt="Image 4" class="img-fluid float-left mr-3" width="195px" height="150px">
+                                <div>
+                                    <button class="btn btn-light text-info">Finance</button>
+                                    <h5><b>What makes us different from others</b></h5>
+                                    <p>May 2023</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<div class="container8">
+  <div class="row justify-content-center">
+   
+      <div class="col-md-6">
+          <img  src="last.jpg.png" alt="Your Image" class="img" width="750px" height="200px" >
+      </div>
+     
+      <div class="col-md-6">
+          <div class="content-box" >
+              <div class="circle">
+                <i style="color: blue;" class="fa-brands fa-windows"></i>
+                 
+              </div>
+              <div class="text">
+                  <p>We Provide The Best Solution For Your Business Development <b style="color: blue;"> Let's Take with us -></b></p>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+<footer class="footer">
+  <div class="container9" style="background-color: navy;color: white;padding: 20px;">
+      <div class="row">
+          <!-- First Column -->
+          <div class="col-md-3 margin-left-20px ">
+              <img src="logo.png" alt="Your Image" class="img-fluid mb-3" width="50px" style="margin-left: 12px;">
+              <p>SAPTECHCONSULTING</p>
+              <p>We Provide The Best Solution For<br> Your Business Development</p>
+              <!-- Four icons in a row -->
+              <div class="d-flex">
+                  <i class="fab fa-facebook mr-3"></i>
+                  <i class="fab fa-instagram mr-3"></i>
+                  <i class="fab fa-linkedin mr-3"></i>
+                  <i class="fa-brands fa-youtube"></i>
+              </div>
+          </div>
+          <!-- Second Column -->
+          <div class="col-md-3">
+              <p><b>Quick Links</b></p>
+              <ul class="list-unstyled">
+                  <li><a href="#"></a>Home</li>
+                  <li><a href="#"></a>Services</li>
+                  <li><a href="#"></a>Careers</li>
+                  <li><a href="#"></a>Knowledge</li>
+                  <li><a href="#"></a>Contact Us</li>
+              </ul>
+          </div>
+          <!-- Third Column -->
+          <div class="col-md-3">
+              <p><b>Services</b></p>
+              <ul class="list-unstyled">
+                  <li><a href="#"></a>OpenText</li>
+                  <li><a href="#"></a>SAP</li>
+                  <li><a href="#"></a>Finance Service</li>
+              </ul>
+          </div>
+          <!-- Fourth Column -->
+          <div class="col-md-3 mr-7">
+              <p><b>Contact</b></p>
+              <!-- Three icons using Bootstrap -->
+              <div class="a">
+                <i class="fa-solid fa-location-dot"></i> Cybernetyki 10, 02-677, Warsaw, Poland<br>
+                <i class="fa-solid fa-message"></i> info@saptech<br>
+                <i class="fa-solid fa-phone"></i> (000) 000 000 00
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
